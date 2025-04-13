@@ -16,7 +16,7 @@ body {
 }
 
 main {
-  flex: 1;                  /* Ensures the main section takes up available space */
+  flex: 1;
 }
 .header-content {
   display: flex;
