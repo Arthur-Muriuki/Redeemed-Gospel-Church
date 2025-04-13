@@ -447,20 +447,53 @@ footer {
     align-items: center;
   }
 
+    display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+/* Make the contact forms stack on small screens */
+/* Contact Container */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+ .contact-form,
+  .contact-info {
+    width: 100%; /* Ensure both forms take up full width on mobile */
+    box-sizing: border-box; /* Make sure padding doesn't affect the width */
+  }
+ .contact-info {
+    padding: 1.5rem; /* Slightly reduce padding for better fit */
+    box-shadow: none; /* Remove box-shadow if it's too large for mobile */
+  }
+
+@media (max-width: 768px) {
   .contact-container {
-    flex-direction: column;
-    gap: 2rem;
+    flex-direction: column; /* Stack the forms vertically */
+    gap: 2rem; /* Add some space between the two forms */
+    padding: 2rem; /* Add some padding for better spacing */
+  }
+.contact-form button {
+    width: 100%; /* Make the button take up full width */
+    padding: 1rem; /* Ensure button is properly sized */
   }
 
   .contact-form,
   .contact-info {
-    width: 100%;
+    width: 100%; /* Ensure forms take full width on smaller screens */
   }
 
   .hero {
     padding: 4rem 1rem;
   }
 }
+
+
 .hero h2 {
   text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.7);
 }
