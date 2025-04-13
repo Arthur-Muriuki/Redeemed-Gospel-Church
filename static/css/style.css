@@ -341,7 +341,7 @@ nav a:hover {
   }
 }
 
-/* Contact Section */
+
 .contact-container {
   display: flex;
   justify-content: space-between;
@@ -455,12 +455,7 @@ footer {
 
 /* Make the contact forms stack on small screens */
 /* Contact Container */
-.contact-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 2rem;
-  gap: 2rem;
-}
+
 
  .contact-form,
   .contact-info {
