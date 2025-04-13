@@ -12,7 +12,8 @@
   <header>
     <img src="../static/images/image%201.jpg" alt="Church Logo" class="logo" />
     <h1>REDEEMED GOSPEL CHURCH SUBUKIA </h1>
-   <nav>
+  <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <nav class="nav-links">
   <a href="/">Home</a>
   <a href="/about">About</a>
   <a href="/give">Offerings</a>
@@ -62,6 +63,13 @@
 
   getVerseOfTheDay();
 </script>
-#done
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
 </body>
 </html>

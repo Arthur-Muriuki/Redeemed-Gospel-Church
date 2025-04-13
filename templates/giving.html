@@ -13,7 +13,8 @@
   <header>
     <h1>OFFERINGS</h1>
     <img src="../static/images/image%201.jpg" alt="Church Logo" class="header-logo2" />
-    <nav>
+   <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <nav class="nav-links">
   <a href="/">Home</a>
   <a href="/about">About</a>
   <a href="/give">Offerings</a>
@@ -54,5 +55,13 @@
       <img src="../static/images/youtube-icon.png" alt="YouTube" class="social-icon-footer" />
     </a>
   </footer>
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
 </body>
 </html>

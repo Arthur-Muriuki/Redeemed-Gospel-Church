@@ -14,10 +14,85 @@ body {
   display: flex;            /* Use flexbox for the layout */
   flex-direction: column;   /* Stack header, main, and footer vertically */
 }
+/* Base layout */
+header {
+  padding: 1rem;
+  text-align: center;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Burger button hidden by default */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: gold;
+  cursor: pointer;
+}
+
+/* Nav styles */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: gold;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* -------- Responsive Mode -------- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .header-top {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .header-logo2 {
+    width: 50px;
+    height: auto;
+  }
+}
 
 main {
   flex: 1;
 }
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .header-content {
   display: flex;
   justify-content: space-between;
@@ -102,35 +177,41 @@ header h1 {
 }
 
 /* Center the nav links horizontally */
+
+/* Keep your existing link styles */
 nav {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem; /* space between links */
-  margin-top: 1rem;
+  flex-wrap: nowrap; /* keep everything on one line */
+  overflow-x: auto; /* horizontal scroll if needed */
+  white-space: nowrap;
+  gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 0;
 }
 
-/* Style individual nav links */
 nav a {
   color: gold;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1rem;
-  position: relative;
-  transition: color 0.3s ease;
+  font-size: 1rem;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
-/* Optional: Hover underline effect */
-nav a::after {
-  content: '';
-  display: block;
-  height: 2px;
-  background: gold;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-  transform-origin: right;
+@media (max-width: 400px) {
+  nav {
+    gap: 1rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
 }
+
 
 nav a:hover {
   color: white;
@@ -139,6 +220,15 @@ nav a:hover {
 nav a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+nav::-webkit-scrollbar {
+  height: 4px;
+}
+
+nav::-webkit-scrollbar-thumb {
+  background: gold;
+  border-radius: 2px;
 }
 
 
