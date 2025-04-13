@@ -353,7 +353,11 @@ nav a:hover {
   width: 48%;
   animation: fadeUp 1.5s ease-out; /* Animate the contact form */
 }
-
+.email {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
 .contact-info {
   width: 48%;
   background-color: white;
