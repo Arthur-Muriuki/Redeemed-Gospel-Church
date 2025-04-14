@@ -24,7 +24,27 @@
 
   <main>
  <section class="verse-of-the-day">
+   <h3>VERSE OF THE DAY</h3>
   <p id="verseOfTheDay"><span class="cross-icon">✝️</span> Loading verse of the day...</p>
+</section>
+<section class="slideshow-container">
+  <div class="slide fade">
+    <img src="../static/images/Image 2.jpg" alt="Worship Service">
+    <div class="caption">OUR SPIRITUAL MUM AND DAD</div>
+  </div>
+
+  <div class="slide fade">
+    <img src="../static/images/IMAGE 6.jpg" alt="Praise and Worship">
+    <div class="caption">GREAT CRUSADES</div>
+  </div>
+
+  <div class="slide fade">
+    <img src="../static/images/image 4.jpg" alt="Community Fellowship">
+    <div class="caption">Experience God’s Presence</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
 </section>
 
     <section class="hero">
@@ -64,12 +84,36 @@
   getVerseOfTheDay();
 </script>
 <script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
+  let slideIndex = 0;
+  showSlides();
 
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
+  function plusSlides(n) {
+    slideIndex += n;
+    showSlides();
+  }
+
+  function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    if (slideIndex >= slides.length) slideIndex = 0;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
+
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slides[slideIndex].style.display = "block";
+  }
+
+  // Optional auto-play
+  setInterval(() => {
+    plusSlides(1);
+  }, 5000); // every 5 seconds
 </script>
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

@@ -724,3 +724,76 @@ input, button {
   width: 100%;
   box-sizing: border-box;
 }
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: auto; /* Let height adjust based on width */
+  object-fit: cover; /* Ensure the image covers the whole area without distorting */
+  max-height: 600px; /* Increase max height for larger images on desktop */
+}
+
+.caption {
+  color: white;
+  font-size: 2rem;
+  padding: 16px;
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  transition: 0.3s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .caption {
+    font-size: 1.5rem; /* Slightly smaller text on mobile */
+    left: 20px;
+    bottom: 10px;
+  }
+
+  .slide img {
+    max-height: none; /* No max height for mobile */
+    height: auto; /* Let height adjust automatically on smaller screens */
+  }
+
+  .prev, .next {
+    font-size: 1.5rem; /* Adjust the arrow size on mobile */
+  }
+}
