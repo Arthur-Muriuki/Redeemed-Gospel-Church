@@ -8,10 +8,10 @@ load_dotenv()
 app = Flask(__name__)
 
 # Twilio config
-TWILIO_ACCOUNT_SID = os.getenv('AC5fb9e4ad7af159b80dc0e29d310ad058')
-TWILIO_AUTH_TOKEN = os.getenv('95f85cd09137f8ee4e206492863f518a')
+TWILIO_ACCOUNT_SID = os.getenv('TWILIO_ACCOUNT_SID')
+TWILIO_AUTH_TOKEN = os.getenv('TWILIO_AUTH_TOKEN')
 TWILIO_WHATSAPP_FROM = 'whatsapp:+14155238886'  # Twilio Sandbox number
-YOUR_WHATSAPP = os.getenv('whatsapp:+254743596344')       # Set this in your .env file
+YOUR_WHATSAPP = os.getenv('YOUR_WHATSAPP')
 
 client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
@@ -37,7 +37,7 @@ def contactus_page():
 
 # Contact form submission (POST)
 @app.route('/contact', methods=['POST'])
-def contactus_submit():
+def contactus_submit():  # Renamed this function to avoid conflict
     name = request.form['name']
     email = request.form['email']
     phone = request.form['phone']

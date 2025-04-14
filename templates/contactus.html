@@ -7,37 +7,37 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="../static/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
-
 </head>
 <body>
- <header>
-  <div class="header-top">
-    <img src="../static/images/image%201.jpg" alt="Church Logo" class="header-logo2" />
-    <h1>CONTACT</h1>
-    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
-  </div>
+  <header>
+    <div class="header-top">
+      <img src="../static/images/image%201.jpg" alt="Church Logo" class="header-logo2" />
+      <h1>CONTACT</h1>
+      <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    </div>
 
-  <nav class="nav-links">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/give">Offerings</a>
-    <a href="/contact">Contact</a>
-  </nav>
-</header>
-
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/give">Offerings</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
 
   <main>
     <section class="contact-container">
       <div class="contact-form">
         <h3>Contact Us</h3>
         <p>We'd love to hear from you! Fill out the form below, and we'll get in touch with you as soon as possible.</p>
-        <form action="/submit-form" method="POST">
+        <form action="/contact" method="POST">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required />
           </div>
-                <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="Enter your phone number" />
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="Enter your phone number" />
+          </div>
           <div class="form-group">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required />
@@ -48,18 +48,17 @@
           </div>
           <button type="submit">SUBMIT</button>
           <div class="social-media-icons">
-  <p>Connect with us on social media:</p>
-  <a href="https://www.facebook.com/Redeemedgospelchurchsubukia" target="_blank" aria-label="Facebook">
-    <img src="../static/images/facebook-icon.png" alt="Facebook" class="social-icon" />
-  </a>
-  <a href="https://www.instagram.com/redeemed.gospel.church_subukia/" target="_blank" aria-label="Instagram">
-      <img src="../static/images/instagram-icon.png" alt="Instagram" class="social-icon" />
-  </a>
-  <a href="https://www.youtube.com/@redeemedgospelchurchsubuki5613" target="_blank" aria-label="YouTube">
-     <img src="../static/images/youtube-icon.png" alt="YouTube" class="social-icon" />
-  </a>
-</div>
-
+            <p>Connect with us on social media:</p>
+            <a href="https://www.facebook.com/Redeemedgospelchurchsubukia" target="_blank" aria-label="Facebook">
+              <img src="../static/images/facebook-icon.png" alt="Facebook" class="social-icon" />
+            </a>
+            <a href="https://www.instagram.com/redeemed.gospel.church_subukia/" target="_blank" aria-label="Instagram">
+              <img src="../static/images/instagram-icon.png" alt="Instagram" class="social-icon" />
+            </a>
+            <a href="https://www.youtube.com/@redeemedgospelchurchsubuki5613" target="_blank" aria-label="YouTube">
+              <img src="../static/images/youtube-icon.png" alt="YouTube" class="social-icon" />
+            </a>
+          </div>
         </form>
       </div>
 
@@ -67,9 +66,9 @@
         <h3>Our Address</h3>
         <div class="card">
           <p>Subukia, Nakuru County, Kenya</p>
-           <a href="https://www.google.com/maps/place/Redeemed+Gospel+Church+Subukia/@-0.0016113,36.2312204,17z/data=!4m14!1m7!3m6!1s0x1829e026936626f3:0xf01a54f6f145ebac!2sRedeemed+Gospel+Church+Subukia!8m2!3d-0.0016167!4d36.2337953!16s%2Fg%2F11hbgf9n1m!3m5!1s0x1829e026936626f3:0xf01a54f6f145ebac!8m2!3d-0.0016167!4d36.2337953!16s%2Fg%2F11hbgf9n1m?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank">
-             <p>Click here to find us on Google Maps</p>
-           </a>
+          <a href="https://www.google.com/maps/place/Redeemed+Gospel+Church+Subukia/@-0.0016113,36.2312204,17z/data=!4m14!1m7!3m6!1s0x1829e026936626f3:0xf01a54f6f145ebac!2sRedeemed+Gospel+Church+Subukia!8m2!3d-0.0016167!4d36.2337953!16s%2Fg%2F11hbgf9n1m!3m5!1s0x1829e026936626f3:0xf01a54f6f145ebac!8m2!3d-0.0016167!4d36.2337953!16s%2Fg%2F11hbgf9n1m?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank">
+            <p>Click here to find us on Google Maps</p>
+          </a>
         </div>
 
         <h3>Phone</h3>
@@ -83,26 +82,23 @@
         </div>
 
         <h3>Service Times</h3>
-
-          <p>Sundays: 9:00 AM - 2:00 PM</p>
-          <p>Weekdays open 24/7 (join us any day)</p>
-
+        <p>Sundays: 9:00 AM - 2:00 PM</p>
+        <p>Weekdays open 24/7 (join us any day)</p>
       </div>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 Redeemed Gospel Church Inc. </p>
-
   </footer>
-<script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
 
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-</script>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
