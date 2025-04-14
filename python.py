@@ -3,9 +3,12 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import os
-from threading import Thread
+import logging
 
 app = Flask(__name__)
+
+# Setup logging
+logging.basicConfig(level=logging.DEBUG)
 
 # Send email function
 def send_email(subject, body, to_email):
@@ -29,14 +32,10 @@ def send_email(subject, body, to_email):
         text = msg.as_string()
         server.sendmail(from_email, to_email, text)
         server.quit()  # Close the connection
-        print("Email sent successfully!")
+        logging.info("Email sent successfully!")
     except Exception as e:
-        print(f"Failed to send email: {e}")
-
-# Function to send email in a background thread
-def send_email_in_background(subject, body, to_email):
-    email_thread = Thread(target=send_email, args=(subject, body, to_email))
-    email_thread.start()
+        logging.error(f"Failed to send email: {e}")
+        raise e
 
 # Route to handle contact form submission
 @app.route('/contact', methods=['POST'])
@@ -51,13 +50,13 @@ def contact():
     subject = "New Contact Form Submission"
     body = f"Name: {name}\nPhone: {phone}\nEmail: {email}\nMessage: {message}"
 
-    # Send email in background
+    # Send email directly (without background thread)
     try:
-        send_email_in_background(subject, body, "your_email@gmail.com")  # Change this to your desired recipient email
-        print("Email process initiated in background.")
+        send_email(subject, body, "your_email@gmail.com")  # Change this to your desired recipient email
+        logging.info("Email sent directly.")
         return jsonify({"message": "Message received! We will reach out to you soon.", "status": "success"})
     except Exception as e:
-        print(f"Error sending email: {e}")
+        logging.error(f"Error sending email: {e}")
         return jsonify({"message": f"Error: {e}", "status": "error"})
 
 # Start the Flask app
