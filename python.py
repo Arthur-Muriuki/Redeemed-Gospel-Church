@@ -37,6 +37,7 @@ def send_email(subject, body, to_email):
     try:
         logging.info("📡 Connecting to Gmail SMTP server...")
         server = smtplib.SMTP(smtp_server, smtp_port)
+        server.set_debuglevel(1)  # 🕵️ Enable raw SMTP debug logs
         logging.debug(f"✅ Connected to: {smtp_server}:{smtp_port}")
 
         logging.info("🔐 Starting TLS encryption...")
@@ -71,8 +72,7 @@ def contact():
         logging.info("📬 Preparing to send contact form email...")
         logging.debug(f"📝 Contact Data => Name: {name}, Phone: {phone}, Email: {email}, Message: {message}")
 
-        # You can set a recipient email in env for more flexibility
-        to_email = os.getenv("RECIPIENT_EMAIL", "your_email@gmail.com")
+        to_email = os.getenv("RECIPIENT_EMAIL", "your_email@gmail.com")  # Replace as needed
 
         send_email(subject, body, to_email)
         logging.info("✅ Contact form email sent.")
