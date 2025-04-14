@@ -3,6 +3,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import os
+from threading import Thread
 
 app = Flask(__name__)
 
@@ -32,6 +33,11 @@ def send_email(subject, body, to_email):
     except Exception as e:
         print(f"Failed to send email: {e}")
 
+# Function to send email in a background thread
+def send_email_in_background(subject, body, to_email):
+    email_thread = Thread(target=send_email, args=(subject, body, to_email))
+    email_thread.start()
+
 # Route to handle contact form submission
 @app.route('/contact', methods=['POST'])
 def contact():
@@ -45,13 +51,14 @@ def contact():
     subject = "New Contact Form Submission"
     body = f"Name: {name}\nPhone: {phone}\nEmail: {email}\nMessage: {message}"
 
-    # Send email
+    # Send email in background
     try:
-        send_email(subject, body, "your_email@gmail.com")  # Change this to your desired recipient email
+        send_email_in_background(subject, body, "your_email@gmail.com")  # Change this to your desired recipient email
         return jsonify({"message": "Message received! We will reach out to you soon.", "status": "success"})
     except Exception as e:
         return jsonify({"message": f"Error: {e}", "status": "error"})
 
 # Start the Flask app
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Ensure the correct port for Render is used
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
