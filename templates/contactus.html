@@ -1,70 +1,122 @@
-<!-- Inside your existing HTML, replace the <form> block with this updated version: -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Redeemed Gospel Church</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <img src="../static/images/image%201.jpg" alt="Church Logo" class="header-logo2" />
+      <h1>CONTACT</h1>
+      <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    </div>
 
-<form id="contactForm" method="POST">
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" required />
-  </div>
-  <div class="form-group">
-    <label for="phone">Phone Number</label>
-    <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="Enter your phone number" />
-  </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required />
-  </div>
-  <div class="form-group">
-    <label for="message">Message</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
-  </div>
-  <button type="submit">SUBMIT</button>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/give">Offerings</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
 
-  <!-- 👇 Success/Error message goes here -->
-  <div id="responseMessage" style="margin-top: 1rem; font-weight: bold;"></div>
+  <main>
+    <section class="contact-container">
+      <div class="contact-form">
+        <h3>Contact Us</h3>
+        <p>We'd love to hear from you! Fill out the form below, and we'll get in touch with you as soon as possible.</p>
+        <!-- Success message will be displayed here -->
+        <div id="successMessage" style="display: none; color: green; margin-bottom: 20px;">
+          <p>Your message has been sent successfully!</p>
+        </div>
 
-  <div class="social-media-icons">
-    <p>Connect with us on social media:</p>
-    <a href="https://www.facebook.com/Redeemedgospelchurchsubukia" target="_blank" aria-label="Facebook">
-      <img src="../static/images/facebook-icon.png" alt="Facebook" class="social-icon" />
-    </a>
-    <a href="https://www.instagram.com/redeemed.gospel.church_subukia/" target="_blank" aria-label="Instagram">
-      <img src="../static/images/instagram-icon.png" alt="Instagram" class="social-icon" />
-    </a>
-    <a href="https://www.youtube.com/@redeemedgospelchurchsubuki5613" target="_blank" aria-label="YouTube">
-      <img src="../static/images/youtube-icon.png" alt="YouTube" class="social-icon" />
-    </a>
-  </div>
-</form>
+        <form id="contactForm" action="/contact" method="POST" onsubmit="return handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="Enter your phone number" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit">SUBMIT</button>
+          <div class="social-media-icons">
+            <p>Connect with us on social media:</p>
+            <a href="https://www.facebook.com/Redeemedgospelchurchsubukia" target="_blank" aria-label="Facebook">
+              <img src="../static/images/facebook-icon.png" alt="Facebook" class="social-icon" />
+            </a>
+            <a href="https://www.instagram.com/redeemed.gospel.church_subukia/" target="_blank" aria-label="Instagram">
+              <img src="../static/images/instagram-icon.png" alt="Instagram" class="social-icon" />
+            </a>
+            <a href="https://www.youtube.com/@redeemedgospelchurchsubuki5613" target="_blank" aria-label="YouTube">
+              <img src="../static/images/youtube-icon.png" alt="YouTube" class="social-icon" />
+            </a>
+          </div>
+        </form>
+      </div>
 
-<!-- Then before </body>, right after your menu script, paste this: -->
-<script>
-  const form = document.getElementById("contactForm");
-  const responseMessage = document.getElementById("responseMessage");
+      <div class="contact-info">
+        <h3>Our Address</h3>
+        <div class="card">
+          <p>Subukia, Nakuru County, Kenya</p>
+          <a href="https://www.google.com/maps/place/Redeemed+Gospel+Church+Subukia/@-0.0016113,36.2312204,17z/data=!4m14!1m7!3m6!1s0x1829e026936626f3:0xf01a54f6f145ebac!2sRedeemed+Gospel+Church+Subukia!8m2!3d-0.0016167!4d36.2337953!16s%2Fg%2F11hbgf9n1m!3m5!1s0x1829e026936626f3:0xf01a54f6f145ebac!8m2!3d-0.0016167!4d36.2337953!16s%2Fg%2F11hbgf9n1m?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank">
+            <p>Click here to find us on Google Maps</p>
+          </a>
+        </div>
 
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
+        <h3>Phone</h3>
+        <div class="card">
+          <p>+254 722674086 -> Overseer Shadrach</p>
+        </div>
 
-    const formData = new FormData(form);
+        <h3>Email</h3>
+        <div class="email">
+          <p>redeemedgospelchurchsubukia@gmail.com</p>
+        </div>
 
-    try {
-      const res = await fetch("/contact", {
-        method: "POST",
-        body: formData
-      });
+        <h3>Service Times</h3>
+        <p>Sundays: 9:00 AM - 2:00 PM</p>
+        <p>Weekdays open 24/7 (join us any day)</p>
+      </div>
+    </section>
+  </main>
 
-      const data = await res.json();
+  <footer>
+    <p>&copy; 2025 Redeemed Gospel Church Inc. </p>
+  </footer>
 
-      if (data.status === "success") {
-        responseMessage.textContent = data.message;
-        responseMessage.style.color = "green";
-        form.reset(); // 🧼 Clears the form
-      } else {
-        responseMessage.textContent = data.message;
-        responseMessage.style.color = "red";
-      }
-    } catch (err) {
-      responseMessage.textContent = "⚠️ Something went wrong. Try again later.";
-      responseMessage.style.color = "red";
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Handle form submission
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevent default form submission
+      // Show success message
+      document.getElementById("successMessage").style.display = "block";
+      // Clear form fields
+      document.getElementById("contactForm").reset();
+      // Optionally, refresh the page after a short delay
+      setTimeout(function() {
+        document.getElementById("successMessage").style.display = "none";
+      }, 3000); // Hide success message after 3 seconds
     }
-  });
-</script>
+  </script>
+</body>
+</html>
