@@ -14,6 +14,11 @@ logging.basicConfig(level=logging.DEBUG)
 def send_email(subject, body, to_email):
     from_email = os.getenv("EMAIL_USER")  # Fetch from environment variable
     app_password = os.getenv("EMAIL_PASSWORD")  # Fetch from environment variable
+
+    logging.debug(f"EMAIL_USER: {from_email}")
+    logging.debug(f"EMAIL_PASSWORD is set: {bool(app_password)}")
+    logging.debug(f"Recipient Email: {to_email}")
+
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
 
@@ -60,10 +65,10 @@ def contact():
     subject = "New Contact Form Submission"
     body = f"Name: {name}\nPhone: {phone}\nEmail: {email}\nMessage: {message}"
 
-    # Send email directly
     try:
         logging.info("Preparing to send contact form email...")
-        send_email(subject, body, "your_email@gmail.com")  # Change this to your desired recipient email
+        logging.debug(f"Contact Data => Name: {name}, Phone: {phone}, Email: {email}, Message: {message}")
+        send_email(subject, body, "your_email@gmail.com")  # Replace with your real recipient email
         logging.info("Contact form email sent.")
         return jsonify({"message": "Message received! We will reach out to you soon.", "status": "success"})
     except Exception as e:
@@ -72,5 +77,4 @@ def contact():
 
 # Start the Flask app
 if __name__ == '__main__':
-    # Ensure the correct port for Render is used
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
