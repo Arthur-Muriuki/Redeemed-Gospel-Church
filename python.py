@@ -54,8 +54,10 @@ def contact():
     # Send email in background
     try:
         send_email_in_background(subject, body, "your_email@gmail.com")  # Change this to your desired recipient email
+        print("Email process initiated in background.")
         return jsonify({"message": "Message received! We will reach out to you soon.", "status": "success"})
     except Exception as e:
+        print(f"Error sending email: {e}")
         return jsonify({"message": f"Error: {e}", "status": "error"})
 
 # Start the Flask app
