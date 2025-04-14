@@ -1,9 +1,12 @@
+from flask import Flask, request, jsonify
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import os
 
+app = Flask(__name__)
 
+# Send email function
 def send_email(subject, body, to_email):
     from_email = os.getenv("EMAIL_USER")  # Fetch from environment variable
     app_password = os.getenv("EMAIL_PASSWORD")  # Fetch from environment variable
@@ -15,7 +18,6 @@ def send_email(subject, body, to_email):
     msg['From'] = from_email
     msg['To'] = to_email
     msg['Subject'] = subject
-
     msg.attach(MIMEText(body, 'plain'))
 
     try:
@@ -30,10 +32,26 @@ def send_email(subject, body, to_email):
     except Exception as e:
         print(f"Failed to send email: {e}")
 
+# Route to handle contact form submission
+@app.route('/contact', methods=['POST'])
+def contact():
+    # Retrieve form data
+    name = request.form['name']
+    phone = request.form['phone']
+    email = request.form['email']
+    message = request.form['message']
 
-# Example usage:
-subject = "New Contact Form Submission"
-body = "Name: John Doe\nEmail: john.doe@example.com\nMessage: This is a test message!"
-to_email = "your_email@gmail.com"
+    # Create the email subject and body
+    subject = "New Contact Form Submission"
+    body = f"Name: {name}\nPhone: {phone}\nEmail: {email}\nMessage: {message}"
 
-send_email(subject, body, to_email)
+    # Send email
+    try:
+        send_email(subject, body, "your_email@gmail.com")  # Change this to your desired recipient email
+        return jsonify({"message": "Message received! We will reach out to you soon.", "status": "success"})
+    except Exception as e:
+        return jsonify({"message": f"Error: {e}", "status": "error"})
+
+# Start the Flask app
+if __name__ == '__main__':
+    app.run(debug=True)
