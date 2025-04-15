@@ -1,0 +1,314 @@
+/* Ensure the HTML and body fill the viewport */
+html, body {
+  height: 100%; /* Makes sure both elements take up the full height */
+  margin: 0;    /* Removes default margin */
+  padding: 0;   /* Removes default padding */
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #fffaf5;
+}
+
+/* Base layout for About Us */
+.about-hero {
+  background: linear-gradient(rgba(245, 229, 224, 0.9), rgba(255, 250, 245, 0.95));
+  color: #800000;
+  text-align: center;
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.2s ease-in-out;
+  margin-top: 2rem;  /* Added top margin to give space below the header */
+}
+
+.history, .leadership, .service-times {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Section headers */
+h2, h3 {
+  position: relative;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+h2::after, h3::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 0.5rem auto 0;
+  background-color: gold;
+  border-radius: 2px;
+}
+
+/* Leadership section styles */
+.leadership .leader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.leader img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid gold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.leader h4 {
+  margin-top: 1rem;
+  color: #800000;
+}
+
+/* Service times styles */
+.service-times {
+  background-color: #fdf0e6;
+  border-left: 5px solid gold;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.service-times ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #444;
+}
+
+.service-times li {
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: slideUp 0.8s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+/* General Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide-up animation for list items */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Service times list items stagger animation */
+.service-times li:nth-child(1) { --i: 1; }
+.service-times li:nth-child(2) { --i: 2; }
+.service-times li:nth-child(3) { --i: 3; }
+
+/* Base layout */
+header {
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;  /* Added bottom margin to avoid collision */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.header-logo2 {
+  position: absolute;        /* keep it floating */
+  top: 1rem;                 /* still a bit from the top */
+  left: 1rem;                /* NOW it's on the left */
+  right: auto;               /* cancel out the right-side positioning */
+  width: 70px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  animation: glowPulse 2s infinite alternate, fadeIn 1.2s ease-in-out;
+  transition: transform 0.3s ease;
+  z-index: 10;               /* stay on top */
+}
+
+.hero h2 {
+  text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.7);
+}
+
+.social-icon-footer {
+  width: 30px; /* Reduced width */
+  height: 30px; /* Reduced height */
+  margin: 0 10px; /* Optional: reduced margin between icons */
+  transition: transform 0.3s ease; /* Optional: smooth transition for hover effect */
+}
+
+/* Burger button hidden by default */
+.menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: gold;
+  cursor: pointer;
+
+  position: absolute;
+  top: 1.4rem;       /* nicely placed lower */
+  right: 2rem;       /* change this to a smaller value to push it further right */
+
+  z-index: 10;
+}
+
+/* Navigation styles */
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap; /* keep everything on one line */
+  overflow-x: auto; /* horizontal scroll if needed */
+  white-space: nowrap;
+  gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 0;
+}
+
+nav a {
+  color: gold;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 400px) {
+  nav {
+    gap: 1rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+}
+
+nav {
+  flex-direction: column;
+  align-items: center;
+}
+
+nav a:hover {
+  color: blue;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+nav::-webkit-scrollbar {
+  height: 4px;
+}
+
+nav::-webkit-scrollbar-thumb {
+  background: gold;
+  border-radius: 2px;
+}
+
+/* Nav styles */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: gold;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* -------- Responsive Mode -------- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* Footer Styling */
+footer {
+  background-color: #4b0000;  /* Darker maroon background */
+  color: white;  /* White text for contrast */
+  text-align: center;  /* Center the content */
+  padding: 0.5rem;  /* Reduced padding */
+  margin-top: 2rem;  /* Keeps space above footer */
+  font-size: 0.9rem;  /* Smaller font size */
+}
+
+/* Logo in Footer */
+footer .footer-logo {
+  max-width: 100px;  /* Even smaller logo */
+  height: auto;
+  margin: 1rem auto;  /* Center the logo */
+}
+
+/* Social media icons inside the footer */
+footer .social-media-icons {
+  margin-top: 10px;  /* Reduced margin */
+}
+
+footer .social-media-icons a {
+  margin: 0 10px;  /* Reduced spacing between icons */
+}
+
+footer .social-icon {
+  width: 25px;  /* Smaller social icons */
+  height: 25px;
+  border-radius: 50%;
+}
