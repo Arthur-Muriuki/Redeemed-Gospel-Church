@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | Redeemed Gospel Church</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="stylesheet" href="../static/css/contact.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <div class="header-top">
       <img src="../static/images/image%201.jpg" alt="Church Logo" class="header-logo2" />
-      <h1>CONTACT</h1>
+      <h1 style="visibility: hidden;">About Us</h1>
       <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
     </div>
 
@@ -71,9 +71,10 @@
         <h3>Our Address</h3>
         <div class="card">
           <p>Subukia, Nakuru County, Kenya</p>
-          <a href="https://www.google.com/maps/place/Redeemed+Gospel+Church+Subukia/@-0.0016113,36.2312204,17z/data=!4m14!1m7!3m6!1s0x1829e026936626f3:0xf01a54f6f145ebac!2sRedeemed+Gospel+Church+Subukia!8m2!3d-0.0016167!4d36.2337953!16s%2Fg%2F11hbgf9n1m!3m5!1s0x1829e026936626f3:0xf01a54f6f145ebac!8m2!3d-0.0016167!4d36.2337953!16s%2Fg%2F11hbgf9n1m?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank">
-            <p>Click here to find us on Google Maps</p>
-          </a>
+          <a href="https://www.google.com/maps/place/Redeemed+Gospel+Church+Subukia/@-0.0016113,36.2312204,17z/data=!4m14!1m7!3m6!1s0x1829e026936626f3:0xf01a54f6f145ebac!2sRedeemed+Gospel+Church+Subukia!8m2!3d-0.0016167!4d36.2337953!16s%2Fg%2F11hbgf9n1m!3m5!1s0x1829e026936626f3:0xf01a54f6f145ebac!8m2!3d-0.0016167!4d36.2337953!16s%2Fg%2F11hbgf9n1m?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank" class="button-link">
+  LOCATE
+</a>
+
         </div>
 
         <h3>Phone</h3>
@@ -85,18 +86,58 @@
         <div class="email">
           <p>redeemedgospelchurchsubukia@gmail.com</p>
         </div>
-
-        <h3>Service Times</h3>
-        <p>Sundays: 9:00 AM - 2:00 PM</p>
-        <p>Weekdays open 24/7 (join us any day)</p>
+    <div class="service-times">
+      <h3>Service Times</h3>
+      <ul>
+        <li>Sunday First Service: 8:00 am - 11:00am</li>
+        <li>Sunday Second Service: 11:00 am - 2:00pm</li>
+        <li>HBCs In Between The Week</li>
+      </ul>
+    </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Redeemed Gospel Church Inc. </p>
-  </footer>
+<footer>
+  <div class="footer-content">
+    <!-- QUICK LINKS -->
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/give">Offerings</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
 
+    <!-- CONTACT INFO -->
+    <div class="footer-column">
+      <h4>Contact Us</h4>
+      <ul class="contact-list">
+        <li>Email:redeemedgospelchurchsubukia@gmail.com</li>
+        <li>Phone: <a href="tel:+254722674086">+254 722 674 086</a></li>
+        <li>Location: Subukia, Kenya</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SOCIAL MEDIA ICONS -->
+  <div class="social-footer-icons">
+    <a href="https://www.facebook.com/Redeemedgospelchurchsubukia" target="_blank" aria-label="Facebook">
+      <img src="../static/images/facebook-icon.png" alt="Facebook" class="social-icon-footer" />
+    </a>
+    <a href="https://www.instagram.com/redeemed.gospel.church_subukia/" target="_blank" aria-label="Instagram">
+      <img src="../static/images/instagram-icon.png" alt="Instagram" class="social-icon-footer" />
+    </a>
+    <a href="https://www.youtube.com/@redeemedgospelchurchsubuki5613" target="_blank" aria-label="YouTube">
+      <img src="../static/images/youtube-icon.png" alt="YouTube" class="social-icon-footer" />
+    </a>
+  </div>
+
+  <!-- COPYRIGHT -->
+  <p>&copy; 2025 RGC Subukia Inc. All rights reserved.</p>
+</footer>
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');

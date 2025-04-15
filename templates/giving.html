@@ -5,28 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Give | Our Church</title>
 
-  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="stylesheet" href="../static/css/giving.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
 
 </head>
 <body>
   <header>
-    <h1>OFFERINGS</h1>
-    <img src="../static/images/image%201.jpg" alt="Church Logo" class="header-logo2" />
-   <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <a href="giving.html">
+    <img src="../static/images/image%201.jpg" alt="Church Logo" class="header-logo2" /></a>
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
     <nav class="nav-links">
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/give">Offerings</a>
-  <a href="/contact">Contact</a>
-</nav>
-
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/give">Offerings</a>
+      <a href="/contact">Contact</a>
+    </nav>
   </header>
 
   <main>
     <section class="give-hero">
       <div class="give-container">
-        <h2>Support Our Ministry</h2>
+        <h2>Give via Mpesa</h2>
         <p class="give-intro">Your giving fuels our mission and changes lives. Every shilling makes a difference. 🙏</p>
         <form id="donationForm" class="give-card">
           <div class="form-group">
@@ -43,18 +42,35 @@
       </div>
     </section>
   </main>
+
   <footer>
-    <p>&copy; 2025 Redeemed Gospel Church Inc.</p>
-    <a href="https://www.facebook.com/Redeemedgospelchurchsubukia" target="_blank" aria-label="Facebook">
-      <img src="../static/images/facebook-icon.png" alt="Facebook" class="social-icon-footer" />
-    </a>
-    <a href="https://www.instagram.com/redeemed.gospel.church_subukia/" target="_blank" aria-label="Instagram">
-      <img src="../static/images/instagram-icon.png" alt="Instagram" class="social-icon-footer" />
-    </a>
-    <a href="https://www.youtube.com/@redeemedgospelchurchsubuki5613" target="_blank" aria-label="YouTube">
-      <img src="../static/images/youtube-icon.png" alt="YouTube" class="social-icon-footer" />
-    </a>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/give">Offerings</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <ul class="contact-list">
+          <li>Email: redeemedgospelchurchsubukia@gmail.com</li>
+          <li>Phone: <a href="tel:+254722674086">+254 722 674 086</a></li>
+          <li>Location: Subukia, Kenya</li>
+        </ul>
+      </div>
+    </div>
+    <div class="social-footer-icons">
+      <a href="https://www.facebook.com/Redeemedgospelchurchsubukia" target="_blank"><img src="../static/images/facebook-icon.png" class="social-icon-footer" /></a>
+      <a href="https://www.instagram.com/redeemed.gospel.church_subukia/" target="_blank"><img src="../static/images/instagram-icon.png" class="social-icon-footer" /></a>
+      <a href="https://www.youtube.com/@redeemedgospelchurchsubuki5613" target="_blank"><img src="../static/images/youtube-icon.png" class="social-icon-footer" /></a>
+    </div>
+    <p>&copy; 2025 RGC Subukia Inc. All rights reserved.</p>
   </footer>
+
 <script>
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
@@ -63,5 +79,6 @@
     navLinks.classList.toggle('active');
   });
 </script>
+
 </body>
 </html>

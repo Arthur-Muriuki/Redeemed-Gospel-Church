@@ -4,117 +4,145 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome | Our Church</title>
-  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="stylesheet" href="../static/css/home.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
-
 </head>
 <body>
   <header>
-    <img src="../static/images/image%201.jpg" alt="Church Logo" class="logo" />
-    <h1>REDEEMED GOSPEL CHURCH SUBUKIA </h1>
-  <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <a href="Home.html">
+    <img src="../static/images/image%201.jpg" alt="Church Logo" class="header-logo2" />
+      </a>
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
     <nav class="nav-links">
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/give">Offerings</a>
-  <a href="/contact">Contact</a>
-</nav>
-
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/give">Offerings</a>
+      <a href="/contact">Contact</a>
+    </nav>
   </header>
 
   <main>
- <section class="verse-of-the-day">
-   <h3>VERSE OF THE DAY</h3>
-  <p id="verseOfTheDay"><span class="cross-icon">✝️</span> Loading verse of the day...</p>
-</section>
-<section class="slideshow-container">
-  <div class="slide fade">
-    <img src="../static/images/Image 2.jpg" alt="Worship Service">
-    <div class="caption">OUR SPIRITUAL MUM AND DAD</div>
-  </div>
+    <section class="verse-of-the-day">
+      <h3>VERSE OF THE DAY</h3>
+      <p id="verseOfTheDay"><span class="cross-icon">✝️</span> Loading verse of the day...</p>
+    </section>
 
-  <div class="slide fade">
-    <img src="../static/images/IMAGE 6.jpg" alt="Praise and Worship">
-    <div class="caption">GREAT CRUSADES</div>
-  </div>
+    <section class="slideshow-container">
+      <div class="slide fade">
+        <img src="../static/images/Image%202.jpg" alt="Our Spiritual Mum and Dad">
+        <div class="caption">OUR SPIRITUAL MUM AND DAD</div>
+      </div>
+      <div class="slide fade">
+        <img src="../static/images/IMAGE%206.jpg" alt="Great Crusades">
+        <div class="caption">GREAT CRUSADES</div>
+      </div>
+      <div class="slide fade">
+        <img src="../static/images/image%204.jpg" alt="Community Fellowship">
+        <div class="caption">Experience God’s Presence</div>
+      </div>
 
-  <div class="slide fade">
-    <img src="../static/images/image 4.jpg" alt="Community Fellowship">
-    <div class="caption">Experience God’s Presence</div>
-  </div>
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    </section>
 
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a>
-</section>
+    <section class="service-times">
+      <h3>Service Times</h3>
+      <ul>
+        <li>Sunday First Service: 8:00 am - 11:00am</li>
+        <li>Sunday Second Service: 11:00 am - 2:00pm</li>
+        <li>HBCs In Between The Week</li>
+      </ul>
+    </section>
 
     <section class="hero">
-  <h2>A LIFE TRANSFORMATION CENTER</h2>
-  <p>Join us every Sunday and let us worship together.</p>
-      <a href="https://www.google.com/maps/place/Redeemed+Gospel+Church+Subukia/@-0.0016113,36.2312204,17z/data=!4m14!1m7!3m6!1s0x1829e026936626f3:0xf01a54f6f145ebac!2sRedeemed+Gospel+Church+Subukia!8m2!3d-0.0016167!4d36.2337953!16s%2Fg%2F11hbgf9n1m!3m5!1s0x1829e026936626f3:0xf01a54f6f145ebac!8m2!3d-0.0016167!4d36.2337953!16s%2Fg%2F11hbgf9n1m?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank" class="btn">
-            <p>LOCATE US</p>
-          </a>
-</section>
+      <h2>A LIFE TRANSFORMATION CENTER</h2>
+      <p>Join us every Sunday and let us worship together.</p>
+      <a href="https://www.google.com/maps/place/Redeemed+Gospel+Church+Subukia" target="_blank" class="btn">LOCATE US</a>
+    </section>
   </main>
-  <footer>
-    <p>&copy; 2025 redeemed gospel church inc.</p>
-     <a href="https://www.facebook.com/Redeemedgospelchurchsubukia" target="_blank" aria-label="Facebook">
-    <img src="../static/images/facebook-icon.png" alt="Facebook" class="social-icon-footer" />
-  </a>
-  <a href="https://www.instagram.com/redeemed.gospel.church_subukia/" target="_blank" aria-label="Instagram">
+
+<footer>
+  <div class="footer-content">
+    <!-- QUICK LINKS -->
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/give">Offerings</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT INFO -->
+    <div class="footer-column">
+      <h4>Contact Us</h4>
+      <ul class="contact-list">
+        <li>Email:redeemedgospelchurchsubukia@gmail.com</li>
+        <li>Phone: <a href="tel:+254722674086">+254 722 674 086</a></li>
+        <li>Location: Subukia, Kenya</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SOCIAL MEDIA ICONS -->
+  <div class="social-footer-icons">
+    <a href="https://www.facebook.com/Redeemedgospelchurchsubukia" target="_blank" aria-label="Facebook">
+      <img src="../static/images/facebook-icon.png" alt="Facebook" class="social-icon-footer" />
+    </a>
+    <a href="https://www.instagram.com/redeemed.gospel.church_subukia/" target="_blank" aria-label="Instagram">
       <img src="../static/images/instagram-icon.png" alt="Instagram" class="social-icon-footer" />
-  </a>
-  <a href="https://www.youtube.com/@redeemedgospelchurchsubuki5613" target="_blank" aria-label="YouTube">
-     <img src="../static/images/youtube-icon.png" alt="YouTube" class="social-icon-footer" />
-  </a>
+    </a>
+    <a href="https://www.youtube.com/@redeemedgospelchurchsubuki5613" target="_blank" aria-label="YouTube">
+      <img src="../static/images/youtube-icon.png" alt="YouTube" class="social-icon-footer" />
+    </a>
+  </div>
 
-  </footer>
-<script>
-  async function getVerseOfTheDay() {
-    try {
-      const response = await fetch("https://beta.ourmanna.com/api/v1/get/?format=json&order=daily");
-      const data = await response.json();
-      const verse = data.verse.details.text;
-      const reference = data.verse.details.reference;
+  <!-- COPYRIGHT -->
+  <p>&copy; 2025 RGC Subukia Inc. All rights reserved.</p>
+</footer>
 
-      document.getElementById("verseOfTheDay").textContent = `"${verse}" — ${reference}`;
-    } catch (error) {
-      document.getElementById("verseOfTheDay").textContent = "Couldn't fetch the verse today 🙏.";
-      console.error("Error fetching verse of the day:", error);
-    }
-  }
-
-  getVerseOfTheDay();
-</script>
-<script>
-  let slideIndex = 0;
-  showSlides();
-
-  function plusSlides(n) {
-    slideIndex += n;
-    showSlides();
-  }
-
-  function showSlides() {
-    let slides = document.getElementsByClassName("slide");
-    if (slideIndex >= slides.length) slideIndex = 0;
-    if (slideIndex < 0) slideIndex = slides.length - 1;
-
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-
-    slides[slideIndex].style.display = "block";
-  }
-
-  // Optional auto-play
-  setInterval(() => {
-    plusSlides(1);
-  }, 5000); // every 5 seconds
-</script>
   <script>
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      const navLinks = document.querySelector('.nav-links');
-      navLinks.classList.toggle('active');
+    async function getVerseOfTheDay() {
+      try {
+        const response = await fetch("https://beta.ourmanna.com/api/v1/get/?format=json&order=daily");
+        const data = await response.json();
+        const verse = data.verse.details.text;
+        const reference = data.verse.details.reference;
+        document.getElementById("verseOfTheDay").textContent = `"${verse}" — ${reference}`;
+      } catch (error) {
+        document.getElementById("verseOfTheDay").textContent = "Couldn't fetch the verse today 🙏.";
+        console.error("Error fetching verse of the day:", error);
+      }
+    }
+
+    getVerseOfTheDay();
+  </script>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].style.display = "block";
+    }
+
+    function plusSlides(n) {
+      slideIndex += n - 1; // offset for the auto-increment
+      showSlides();
+    }
+
+    showSlides();
+    setInterval(showSlides, 5000);
+  </script>
+
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function () {
+      document.querySelector('.nav-links').classList.toggle('active');
     });
   </script>
 </body>

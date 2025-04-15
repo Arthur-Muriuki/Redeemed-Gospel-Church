@@ -6,72 +6,100 @@
   <title>About Us | Our Church</title>
   <link rel="stylesheet" href="../static/css/about.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
-
 </head>
 <body>
   <header>
     <h1 style="visibility: hidden;">About Us</h1>
+    <a href="aboutus.html">
      <img src="../static/images/image%201.jpg" alt="Church Logo" class="header-logo2" />
+      </a>
      <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
     <nav class="nav-links">
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/give">Offerings</a>
-  <a href="/contact">Contact</a>
-</nav>
-
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/give">Offerings</a>
+      <a href="/contact">Contact</a>
+    </nav>
   </header>
-
   <main>
      <section class="about-hero">
-    <div class="container">
-      <h2>Our Mission & Vision</h2>
-      <p>We are a Christ-centered community committed to spreading love, serving people, and growing in faith together.</p>
-    </div>
-  </section>
+      <div class="container">
+        <h2>Our Mission & Vision</h2>
+        <p>We are a Christ-centered community committed to spreading love, serving people, and growing in faith together.</p>
+      </div>
+    </section>
 
     <section class="history">
-    <div class="container">
-      <h2>Our Story</h2>
-      <p>Our Church began with a small group of believers and a big vision. Today, we serve hundreds of families with powerful worship, impactful outreach, and a heart for community transformation.</p>
-    </div>
-  </section>
-
-     <section class="leadership">
-    <div class="container">
-      <h3>Meet Our Overseer</h3>
-      <div class="leader">
-        <img src="../static/images/image%203.jpg" alt="Overseer Shadrach Muiruri" class="logo"/>
-        <h4>Overseer Shadrach Muiruri</h4>
-        <p>Lead Overseer with a passion for teaching the Word and empowering the children of God.</p>
+      <div class="container">
+        <h2>Our Story</h2>
+        <p>Our Church began with a small group of believers and a big vision. Today, we serve hundreds of families with powerful worship, impactful outreach, and a heart for community transformation.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-     <section class="service-times">
-    <div class="container">
-      <h3>Join Us Weekly</h3>
+    <section class="leadership">
+      <div class="container">
+        <h3>Meet Our Overseer</h3>
+        <div class="leader">
+          <img src="../static/images/image%203.jpg" alt="Overseer Shadrach Muiruri" class="logo"/>
+          <h4>Overseer Shadrach Muiruri</h4>
+          <p>Lead Overseer with a passion for teaching the Word and empowering the children of God.</p>
+        </div>
+      </div>
+    </section>
+
+      <section class="service-times">
+      <h3>Service Times</h3>
       <ul>
-        <li>Sunday Service – 10:00 AM</li>
-        <li>Any time on weekdays</li>
+        <li>Sunday First Service: 8:00 am - 11:00am</li>
+        <li>Sunday Second Service: 11:00 am - 2:00pm</li>
+        <li>HBCs In Between The Week</li>
+      </ul>
+    </section>
+  </main>
 
+<footer>
+  <div class="footer-content">
+    <!-- QUICK LINKS -->
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/give">Offerings</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </div>
-  </section>
-</main>
 
-  <footer>
-    <p>&copy; 2025 RGC Subukia inc.All rights reserved.</p>
-     <a href="https://www.facebook.com/Redeemedgospelchurchsubukia" target="_blank" aria-label="Facebook">
-    <img src="../static/images/facebook-icon.png" alt="Facebook" class="social-icon-footer" />
-  </a>
-  <a href="https://www.instagram.com/redeemed.gospel.church_subukia/" target="_blank" aria-label="Instagram">
+ <!-- CONTACT INFO -->
+    <div class="footer-column">
+      <h4>Contact Us</h4>
+      <ul class="contact-list">
+        <li>Email: >redeemedgospelchurchsubukia@gmail.com</li>
+        <li>Phone: +254 722 674 086</li>
+        <li>Location: Subukia, Kenya</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- SOCIAL MEDIA ICONS -->
+  <div class="social-footer-icons">
+    <a href="https://www.facebook.com/Redeemedgospelchurchsubukia" target="_blank" aria-label="Facebook">
+      <img src="../static/images/facebook-icon.png" alt="Facebook" class="social-icon-footer" />
+    </a>
+    <a href="https://www.instagram.com/redeemed.gospel.church_subukia/" target="_blank" aria-label="Instagram">
       <img src="../static/images/instagram-icon.png" alt="Instagram" class="social-icon-footer" />
-  </a>
-  <a href="https://www.youtube.com/@redeemedgospelchurchsubuki5613" target="_blank" aria-label="YouTube">
-     <img src="../static/images/youtube-icon.png" alt="YouTube" class="social-icon-footer" />
-  </a>
-  </footer>
+    </a>
+    <a href="https://www.youtube.com/@redeemedgospelchurchsubuki5613" target="_blank" aria-label="YouTube">
+      <img src="../static/images/youtube-icon.png" alt="YouTube" class="social-icon-footer" />
+    </a>
+  </div>
+
+  <!-- COPYRIGHT -->
+  <p>&copy; 2025 RGC Subukia Inc. All rights reserved.</p>
+</footer>
+
+
 <script>
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');

@@ -1,0 +1,464 @@
+/* General resets */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fffaf5;
+}
+
+/* Headers with golden underline */
+h2, h3, h4 {
+  position: relative;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+h2::after, h3::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 0.5rem auto 0;
+  background-color: gold;
+  border-radius: 2px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header styling */
+header {
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 0.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Floating logo */
+.header-logo2 {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 70px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  animation: glowPulse 2s infinite alternate, fadeIn 1.2s ease-in-out;
+  transition: transform 0.3s ease;
+  z-index: 10;
+}
+
+/* Navbar toggle (only shows on mobile) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: gold;
+  cursor: pointer;
+  position: absolute;
+  top: 1.4rem;
+  right: 2rem;
+  z-index: 10;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: gold;
+}
+
+/* Mobile view: hide nav, show toggle */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #fffaf5;
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    z-index: 10;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 2rem;
+  margin-top: -5rem; /* Raised further up */
+}
+
+.contact-form {
+  width: 48%;
+  animation: fadeUp 1.5s ease-out; /* Animate the contact form */
+}
+.email {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+.contact-info {
+  width: 48%;
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeUp 1.5s ease-out;
+
+  text-align: center; /* 👈 this is the key */
+}
+
+/* Contact Form Styles */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: gold;
+}
+
+.contact-form button {
+  background-color: gold;
+  color: maroon;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  animation: fadeUp 1.5s ease-out 0.5s; /* Delay for the button */
+}
+
+.contact-form button:hover {
+  background-color: maroon;
+  color: gold;
+}
+
+/* Card for Contact Info */
+.card {
+  background-color: #fff;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Mobile Optimizations ===== */
+.contact-form,
+.contact-info {
+  width: 100%; /* Full width for both on mobile and small screens */
+  box-sizing: border-box; /* Keep paddings tidy */
+}
+
+.contact-info {
+  padding: 1.5rem; /* Slightly reduce padding */
+  box-shadow: none; /* Prevent shadow overflow on small screens */
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; /* Stack elements vertically */
+    gap: 2rem; /* Space between stacked elements */
+    padding: 2rem; /* Breathable padding */
+  }
+
+  .contact-form button {
+    width: 100%; /* Make the submit button full-width */
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-icon,
+  .social-icon-footer {
+    width: 24px;
+  }
+}
+.social-media-icons {
+  margin-top: 20px;
+  text-align: center;
+}
+.social-icon {
+  width: 40px; /* You can adjust this size as needed */
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+.social-icon {
+  border-radius: 50%; /* Makes the icon circular */
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+}
+.social-icon:hover,
+.social-icon-footer:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  transition: all 0.3s ease;
+  background-color: gold; /* Or use a soft gold shade if you're feelin' fancy */
+  border-radius: 50%;
+  padding: 0.2rem; /* Optional: adds space for background color */
+}
+.form-group {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 90%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: box-shadow 0.3s ease;
+}
+/* Service Times Section */
+.service-times {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.service-times h2 {
+  font-size: 1.5rem;
+  color: #800000;
+  margin-bottom: 20px;
+}
+
+.service-times ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.service-times li {
+  font-size: 1rem;
+  color: #333;
+  margin: 10px 0;
+  padding: 8px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.service-times li:hover {
+  cursor: pointer;
+}
+.button-link {
+  display: inline-block;
+  background-color: #4b0000;  /* Maroon color */
+  color: white;
+  padding: 8px 16px;  /* Reduced padding */
+  border-radius: 6px;  /* Slightly smaller border radius */
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.9rem;  /* Reduced font size */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-link:hover {
+  background-color: gold;  /* Change background color on hover */
+  color: maroon;
+  transform: scale(1.05);  /* Slight hover animation */
+}
+
+.button-link:active {
+  transform: scale(0.98);  /* Press effect */
+}
+
+.form-group input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+  border-color: gold;
+}
+
+/* Footer */
+footer {
+  background-color: #4b0000;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+.footer-logo {
+  max-width: 100px;
+  height: auto;
+  margin: 1rem auto;
+}
+.social-media-icons {
+  margin-top: 10px;
+}
+.social-media-icons a {
+  margin: 0 10px;
+}
+.social-icon-footer {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+/* Footer */
+footer {
+  background-color: #4b0000;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  font-size: 0.9rem;
+  border-top: 2px solid gold;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.footer-column {
+  text-align: center;
+}
+
+.footer-column h4 {
+  margin-bottom: 0.5rem;
+  color: gold;
+  font-size: 1.1rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-column a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: gold;
+}
+
+.contact-list li {
+  margin-bottom: 0.3rem;
+}
+
+/* Social icons */
+.social-footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.social-icon-footer {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon-footer:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-column {
+    width: 40%;
+  }
+
+  .social-footer-icons {
+    margin-top: 1rem;
+  }
+
+  footer p {
+    margin-top: 1rem;
+  }
+}
+.social-icon-footer:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 5px gold);
+}
