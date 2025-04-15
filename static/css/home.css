@@ -122,58 +122,77 @@ header {
   }
 }
 
-/* Slideshow */
 .slideshow-container {
   position: relative;
   max-width: 100%;
-  margin: 0 auto;
+  margin: auto;
+  overflow: hidden;
 }
 
 .slide {
-  display: none;
-  position: relative; /* Ensure the caption is positioned relative to the image */
+  position: relative;
 }
 
 .slide img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  display: block;
 }
 
-/* Caption styling */
 .caption {
   position: absolute;
-  bottom: 10px;  /* Position the caption at the bottom of the image */
+  bottom: 0;
   left: 0;
-  right: 0;
-  padding: 10px;
-  background-color: transparent;  /* Transparent background behind text */
-  color: maroon;
-  font-weight: bold;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); /* soft overlay */
+  color: #fff;
+  padding: 12px 16px;
   text-align: center;
-  font-size: 1.2rem;  /* Optional: Adjust font size */
-  border-radius: 0 0 8px 8px; /* Rounded corners at the bottom */
-  display: inline-block; /* Makes the background fit only around the text */
+  font-family: 'Montserrat', sans-serif; /* or 'Open Sans' */
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 45%;
+  top: 50%;
   transform: translateY(-50%);
-  font-size: 2rem;
-  padding: 0.5rem;
-  color: maroon;
-  background-color: rgba(255, 255, 255, 0.5);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
   border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  color: maroon;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
   z-index: 5;
+  backdrop-filter: blur(4px); /* Glassy modern */
 }
+
+/* Left and Right Positions */
 .prev {
-  left: 1rem;
+  left: 10px;
 }
+
 .next {
-  right: 1rem;
+  right: 10px;
 }
+
+.prev:hover, .next:hover {
+  background-color: gold;
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
 
 /* Hero Section */
 .hero {
@@ -186,6 +205,7 @@ header {
 
 /* Verse of the Day Section */
 .verse-of-the-day {
+  color: maroon;
   text-align: center;
   padding: 1rem 0 0.5rem;
   margin-top: 10px;
@@ -228,6 +248,9 @@ header {
 
 .service-times li:hover {
   cursor: pointer;
+}
+.maroon-heading {
+  color: #4b0000; /* Deep maroon, like fine wine */
 }
 
 /* Hero Section Button */
