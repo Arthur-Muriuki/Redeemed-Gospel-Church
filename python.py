@@ -35,12 +35,13 @@ class SimpleHandler(BaseHTTPRequestHandler):
             form_data = parse_qs(post_data)
 
             name = form_data.get("name", [""])[0]
+            number = form_data.get("phone", [""])[0]
             email = form_data.get("email", [""])[0]
             message = form_data.get("message", [""])[0]
 
-            # Format email body
+            # Format email body with phone number included
             subject = f"New Contact Form Submission from {name}"
-            body = f"From: {name} <{email}>\n\nMessage:\n{message}"
+            body = f"From: {name} <{email}>\nPhone: {number}\n\nMessage:\n{message}"
             recipient = os.environ.get("CONTACT_RECEIVER", "your_email@example.com")
 
             success = send_email(subject, body, recipient)
@@ -60,6 +61,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
             <form method="POST" action="/contact">
                 <input name="name" placeholder="Your Name"><br>
                 <input name="email" placeholder="Your Email"><br>
+                <input name="phone" placeholder="Your Phone"><br>
                 <textarea name="message" placeholder="Your Message"></textarea><br>
                 <button type="submit">Send</button>
             </form>
