@@ -1,87 +1,74 @@
-from flask import Flask, request, jsonify
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 import os
-import logging
+from http.server import BaseHTTPRequestHandler, HTTPServer
+from urllib.parse import parse_qs
+import smtplib
+from email.mime.text import MIMEText
 
-app = Flask(__name__)
+# Email sending logic
+def send_email(subject, body, recipient_email):
+    sender_email = os.environ.get("EMAIL_HOST_USER")
+    sender_password = os.environ.get("EMAIL_HOST_PASSWORD")
 
-# Setup logging
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s [%(levelname)s] - %(message)s')
-
-# Send email function
-def send_email(subject, body, to_email):
-    from_email = os.getenv("EMAIL_USER")
-    app_password = os.getenv("EMAIL_PASSWORD")
-
-    # Validate environment variables
-    if not from_email or not app_password:
-        error_msg = "⚠️ EMAIL_USER or EMAIL_PASSWORD environment variable not set!"
-        logging.error(error_msg)
-        raise ValueError(error_msg)
-
-    logging.debug(f"📨 EMAIL_USER: {from_email}")
-    logging.debug(f"🔒 EMAIL_PASSWORD is set: {bool(app_password)}")
-    logging.debug(f"🎯 Recipient Email: {to_email}")
-
-    smtp_server = "smtp.gmail.com"
-    smtp_port = 587
-
-    msg = MIMEMultipart()
-    msg['From'] = from_email
-    msg['To'] = to_email
-    msg['Subject'] = subject
-    msg.attach(MIMEText(body, 'plain'))
+    msg = MIMEText(body)
+    msg["Subject"] = subject
+    msg["From"] = sender_email
+    msg["To"] = recipient_email
 
     try:
-        logging.info("📡 Connecting to Gmail SMTP server...")
-        server = smtplib.SMTP(smtp_server, smtp_port)
-        server.set_debuglevel(1)  # 🕵️ Enable raw SMTP debug logs
-        logging.debug(f"✅ Connected to: {smtp_server}:{smtp_port}")
-
-        logging.info("🔐 Starting TLS encryption...")
-        server.starttls()
-        logging.debug("🔒 TLS session started.")
-
-        logging.info("🔑 Logging into Gmail SMTP...")
-        server.login(from_email, app_password)
-        logging.debug(f"✅ Logged in as: {from_email}")
-
-        logging.info("📤 Sending email...")
-        server.sendmail(from_email, to_email, msg.as_string())
-        server.quit()
-        logging.info("✅ Email sent successfully and connection closed.")
-
+        with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
+            smtp.starttls()
+            smtp.login(sender_email, sender_password)
+            smtp.send_message(msg)
+        print("✅ Email sent successfully")
+        return True
     except Exception as e:
-        logging.error(f"❌ Failed to send email: {e}")
-        raise e
+        print("❌ Failed to send email:", e)
+        return False
 
-# Route to handle contact form submission
-@app.route('/contact', methods=['POST'])
-def contact():
-    try:
-        name = request.form['name']
-        phone = request.form['phone']
-        email = request.form['email']
-        message = request.form['message']
 
-        subject = "New Contact Form Submission"
-        body = f"Name: {name}\nPhone: {phone}\nEmail: {email}\nMessage: {message}"
+# HTTP server to receive form data
+class SimpleHandler(BaseHTTPRequestHandler):
+    def do_POST(self):
+        if self.path == "/contact":
+            content_length = int(self.headers["Content-Length"])
+            post_data = self.rfile.read(content_length).decode("utf-8")
+            form_data = parse_qs(post_data)
 
-        logging.info("📬 Preparing to send contact form email...")
-        logging.debug(f"📝 Contact Data => Name: {name}, Phone: {phone}, Email: {email}, Message: {message}")
+            name = form_data.get("name", [""])[0]
+            email = form_data.get("email", [""])[0]
+            message = form_data.get("message", [""])[0]
 
-        to_email = os.getenv("RECIPIENT_EMAIL", "your_email@gmail.com")  # Replace as needed
+            # Format email body
+            subject = f"New Contact Form Submission from {name}"
+            body = f"From: {name} <{email}>\n\nMessage:\n{message}"
+            recipient = os.environ.get("CONTACT_RECEIVER", "your_email@example.com")
 
-        send_email(subject, body, to_email)
-        logging.info("✅ Contact form email sent.")
-        return jsonify({"message": "Message received! We will reach out to you soon.", "status": "success"})
+            success = send_email(subject, body, recipient)
 
-    except Exception as e:
-        logging.error(f"🔥 Error sending email from contact form: {e}")
-        return jsonify({"message": f"Error: {e}", "status": "error"})
+            self.send_response(200 if success else 500)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Message sent!" if success else b"Failed to send email.")
+        else:
+            self.send_error(404, "Not Found")
 
-# Start the Flask app
-if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/html")
+        self.end_headers()
+        self.wfile.write(b"""
+            <form method="POST" action="/contact">
+                <input name="name" placeholder="Your Name"><br>
+                <input name="email" placeholder="Your Email"><br>
+                <textarea name="message" placeholder="Your Message"></textarea><br>
+                <button type="submit">Send</button>
+            </form>
+        """)
+
+
+# Server setup
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))  # Render provides PORT env var
+    server = HTTPServer(("", port), SimpleHandler)
+    print(f"🚀 Server running on port {port}...")
+    server.serve_forever()
