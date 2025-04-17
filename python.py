@@ -6,8 +6,8 @@ from email.mime.text import MIMEText
 
 # Email sending logic
 def send_email(subject, body, recipient_email):
-    sender_email = os.environ.get("EMAIL_HOST_USER")
-    sender_password = os.environ.get("EMAIL_HOST_PASSWORD")
+    sender_email = os.environ.get("EMAIL_USER")  # Grab Gmail address
+    sender_password = os.environ.get("EMAIL_PASS")  # Grab App Password
 
     msg = MIMEText(body)
     msg["Subject"] = subject
@@ -41,7 +41,9 @@ class SimpleHandler(BaseHTTPRequestHandler):
             # Format email body
             subject = f"New Contact Form Submission from {name}"
             body = f"From: {name} <{email}>\n\nMessage:\n{message}"
-            recipient = os.environ.get("CONTACT_RECEIVER", "your_email@example.com")
+
+            # You can change this to your church email or keep it dynamic
+            recipient = os.environ.get("CONTACT_RECEIVER", "redeemedgospelchurchsubukia@gmail.com")
 
             success = send_email(subject, body, recipient)
 
@@ -68,7 +70,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
 
 # Server setup
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))  # Render provides PORT env var
+    port = int(os.environ.get("PORT", 8000))  # Render sets PORT automatically
     server = HTTPServer(("", port), SimpleHandler)
     print(f"🚀 Server running on port {port}...")
     server.serve_forever()
