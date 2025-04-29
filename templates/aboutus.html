@@ -11,9 +11,9 @@
   <header>
     <h1 style="visibility: hidden;">About Us</h1>
     <a href="aboutus.html">
-     <img src="../static/images/image%201.jpg" alt="Church Logo" class="header-logo2" />
+     <img src="../static/images/image%201.jpg" alt="Church Logo" class="header-logo2 fade-in" />
       </a>
-     <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+     <button class="menu-toggle fade-in" aria-label="Toggle menu">&#9776;</button>
     <nav class="nav-links">
       <a href="/">Home</a>
       <a href="/about">About</a>
@@ -22,24 +22,24 @@
     </nav>
   </header>
   <main>
-     <section class="about-hero">
-      <div class="container">
+     <section class="about-hero fade-in">
+      <div class="container fade-in">
         <h2>Our Mission & Vision</h2>
         <p>We are a Christ-centered community committed to spreading love, serving people, and growing in faith together.</p>
       </div>
     </section>
 
-    <section class="history">
-      <div class="container">
+    <section class="history fade-in">
+      <div class="container fade-in">
         <h2>Our Story</h2>
         <p>Our Church began with a small group of believers and a big vision. Today, we serve hundreds of families with powerful worship, impactful outreach, and a heart for community transformation.</p>
       </div>
     </section>
 
-    <section class="leadership">
+    <section class="leadership fade-in">
       <div class="container">
         <h3>Meet Our Overseer</h3>
-        <div class="leader">
+        <div class="leader fade-in">
           <img src="../static/images/image%203.jpg" alt="Overseer Shadrach Muiruri" class="logo"/>
           <h4>Overseer Shadrach Muiruri</h4>
           <p>Lead Overseer with a passion for teaching the Word and empowering the children of God.</p>
@@ -47,7 +47,7 @@
       </div>
     </section>
 
-      <section class="service-times">
+      <section class="service-times fade-in">
       <h3>Service Times</h3>
       <ul>
         <li>Sunday First Service: 8:00 am - 11:00am</li>
@@ -58,9 +58,9 @@
   </main>
 
 <footer>
-  <div class="footer-content">
+  <div class="footer-content fade-in">
     <!-- QUICK LINKS -->
-    <div class="footer-column">
+    <div class="footer-column fade-in">
       <h4>Quick Links</h4>
       <ul>
         <li><a href="/">Home</a></li>
@@ -71,19 +71,19 @@
     </div>
 
  <!-- CONTACT INFO -->
-    <div class="footer-column">
+    <div class="footer-column fade-in">
       <h4>Contact Us</h4>
       <ul class="contact-list">
-        <li>Email: >redeemedgospelchurchsubukia@gmail.com</li>
+        <li>Email: redeemedgospelchurchsubukia@gmail.com</li>
         <li>Phone: +254 722 674 086</li>
         <li>Location: Subukia, Kenya</li>
       </ul>
     </div>
   </div>
 
-
+<p class="social-note fade-in">Click the icon to visit our social media page</p>
   <!-- SOCIAL MEDIA ICONS -->
-  <div class="social-footer-icons">
+  <div class="social-footer-icons fade-in">
     <a href="https://www.facebook.com/Redeemedgospelchurchsubukia" target="_blank" aria-label="Facebook">
       <img src="../static/images/facebook-icon.png" alt="Facebook" class="social-icon-footer" />
     </a>
@@ -96,7 +96,7 @@
   </div>
 
   <!-- COPYRIGHT -->
-  <p>&copy; 2025 RGC Subukia Inc. All rights reserved.</p>
+  <p >&copy; 2025 RGC Subukia Inc. All rights reserved.</p>
 </footer>
 
 
@@ -106,6 +106,28 @@
 
   menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const faders = document.querySelectorAll(".fade-in");
+
+    const options = {
+      threshold: 0.1, // How much of the element must be visible
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target); // Animate only once
+      });
+    }, options);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
   });
 </script>
 </body>

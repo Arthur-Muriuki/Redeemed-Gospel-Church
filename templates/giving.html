@@ -13,7 +13,7 @@
   <header>
     <a href="giving.html">
     <img src="../static/images/image%201.jpg" alt="Church Logo" class="header-logo2" /></a>
-    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <button class="menu-toggle fade-in" aria-label="Toggle menu">&#9776;</button>
     <nav class="nav-links">
       <a href="/">Home</a>
       <a href="/about">About</a>
@@ -23,11 +23,11 @@
   </header>
 
   <main>
-    <section class="give-hero">
+    <section class="give-hero ">
       <div class="give-container">
         <h2>Give via Mpesa</h2>
-        <p class="give-intro">Your giving fuels our mission and changes lives. Every shilling makes a difference. 🙏</p>
-        <form id="donationForm" class="give-card">
+        <p class="give-intro">Your giving fuels our mission and takes us forward. Every shilling makes a difference. 🙏</p>
+        <form id="donationForm" class="give-card hidden">
           <div class="form-group">
             <label for="phone">📱 Phone Number</label>
             <input type="text" id="phone" placeholder="e.g. 2547..." required />
@@ -40,11 +40,18 @@
           <p id="responseMessage" class="give-message"></p>
         </form>
       </div>
+      <div class="paybill-box fade-in">
+  <h3>Give via M-Pesa PayBill</h3>
+  <p><strong>PayBill Number:</strong> 678986</p>
+  <p><strong>Account Name:</strong> RGC </p>
+  <p></p>
+</div>
+
     </section>
   </main>
 
   <footer>
-    <div class="footer-content">
+    <div class="footer-content fade-in">
       <div class="footer-column">
         <h4>Quick Links</h4>
         <ul>
@@ -54,16 +61,18 @@
           <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
-      <div class="footer-column">
+      <div class="footer-column fade-in">
         <h4>Contact Us</h4>
-        <ul class="contact-list">
+        <ul class="contact-list fade-in">
           <li>Email: redeemedgospelchurchsubukia@gmail.com</li>
           <li>Phone: <a href="tel:+254722674086">+254 722 674 086</a></li>
           <li>Location: Subukia, Kenya</li>
         </ul>
       </div>
     </div>
-    <div class="social-footer-icons">
+     <p class="social-note fade-in">Click the icon to visit our social media page</p>
+
+    <div class="social-footer-icons fade-in">
       <a href="https://www.facebook.com/Redeemedgospelchurchsubukia" target="_blank"><img src="../static/images/facebook-icon.png" class="social-icon-footer" /></a>
       <a href="https://www.instagram.com/redeemed.gospel.church_subukia/" target="_blank"><img src="../static/images/instagram-icon.png" class="social-icon-footer" /></a>
       <a href="https://www.youtube.com/@redeemedgospelchurchsubuki5613" target="_blank"><img src="../static/images/youtube-icon.png" class="social-icon-footer" /></a>
@@ -77,6 +86,28 @@
 
   menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const faders = document.querySelectorAll(".fade-in");
+
+    const options = {
+      threshold: 0.1, // How much of the element must be visible
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target); // Animate only once
+      });
+    }, options);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
   });
 </script>
 

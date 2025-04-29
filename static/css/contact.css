@@ -164,7 +164,7 @@ header {
 /* Contact Form Styles */
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
+  width: 89%;
   padding: 1rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;
@@ -278,6 +278,7 @@ header {
   border: 1px solid #ccc;
   transition: box-shadow 0.3s ease;
 }
+
 /* Service Times Section */
 .service-times {
   background-color: #f9f9f9;
@@ -354,6 +355,14 @@ footer {
   max-width: 100px;
   height: auto;
   margin: 1rem auto;
+}
+.social-note {
+  color: #fff3d8; /* Soft gold */
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  text-align: center;
+  animation: fadeIn 1.5s ease;
 }
 .social-media-icons {
   margin-top: 10px;
@@ -461,4 +470,15 @@ footer {
 .social-icon-footer:hover {
   transform: scale(1.1);
   filter: drop-shadow(0 0 5px gold);
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
