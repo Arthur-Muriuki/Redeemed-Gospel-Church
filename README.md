@@ -1,5 +1,7 @@
 Redeemed Gospel Church Website<br>
-This repository contains the source code for the Redeemed Gospel Church's official website. The project is built using Python and Flask, with HTML and CSS for the frontend.
+This repository contains the source code for the Redeemed Gospel Church's official website. 
+<br> The Website was created for posting the organisation's information<br>
+The project is built using Python and Flask, with HTML and CSS for the frontend.
 <br>
 Live Site
 https://redeemed-gospel-church-subukia-sbu6.onrender.com/contact<br>
