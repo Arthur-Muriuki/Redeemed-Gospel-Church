@@ -26,9 +26,7 @@ Redeemed-Gospel-Church/
 ├── requirements.txt # Project dependencies
 ├── .idea/ # IDE settings (PyCharm, etc.)
 
-yaml
-Copy
-Edit
+
 
 
 ---
