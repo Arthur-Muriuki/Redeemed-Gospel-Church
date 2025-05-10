@@ -1,59 +1,98 @@
-Redeemed Gospel Church Website<br>
-This repository contains the source code for the Redeemed Gospel Church's official website. 
-<br> The Website was created for posting the organisation's information<br>
-The project is built using Python and Flask, with HTML and CSS for the frontend.
-<br>
-Live Site
-https://redeemed-gospel-church-subukia-sbu6.onrender.com/contact<br>
-Project Structure
-app.py: The main Flask application file.
+# 🌐 Redeemed Gospel Church Website
 
-python.py: Additional Python scripts or modules.
+![License: Proprietary](https://img.shields.io/badge/license-proprietary-red)
+![Built with Flask](https://img.shields.io/badge/Flask-Python%20Web%20Framework-blue)
+![Frontend](https://img.shields.io/badge/Frontend-HTML%2FCSS-green)
 
-templates/: Contains HTML templates for the website.
+Welcome to the official website repository for **Redeemed Gospel Church**.  
+This project serves as the church’s online presence and provides visitors with organizational information, contact details, and updates.
 
-static/: Contains static files like CSS, JavaScript, and images.
+---
 
-requirements.txt: Lists the Python dependencies required for the project.
+## 🔗 Live Website
 
-.idea/: Contains project configuration files for the IDE (e.g., PyCharm).
-<br>
-Technologies Used
-Python: Backend programming language.
+👉 **[Visit the Live Site](https://redeemed-gospel-church-subukia-sbu6.onrender.com/contact)**
 
-Flask: Web framework for Python.
+---
 
-HTML/CSS: Markup and styling for the frontend.
+## 📁 Project Structure
 
-Getting Started
-To run this project locally:
+Redeemed-Gospel-Church/
+│
+├── app.py # Main Flask application
+├── python.py # Additional Python modules
+├── templates/ # HTML templates
+├── static/ # CSS, JS, and image files
+├── requirements.txt # Project dependencies
+├── .idea/ # IDE settings (PyCharm, etc.)
 
-Clone the repository:
-
-bash
+yaml
 Copy
 Edit
+
+
+---
+
+## ⚙️ Technologies Used
+
+- **Python** – Core backend logic
+- **Flask** – Lightweight Python web framework
+- **HTML/CSS** – Frontend structure and styling
+
+---
+
+## 🚀 Getting Started
+
+Follow the steps below to run the website locally.
+
+### 📥 Clone the Repository
+
+```bash
 git clone https://github.com/Arthur-Muriuki/Redeemed-Gospel-Church.git
 cd Redeemed-Gospel-Church
-Create a virtual environment (optional but recommended):
 
+🧪 Create a Virtual Environment (Optional but Recommended)
+On macOS/Linux:
 bash
 Copy
 Edit
 python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-Install dependencies:
-
+source venv/bin/activate
+On Windows:
+bash
+Copy
+Edit
+python -m venv venv
+venv\Scripts\activate
+📦 Install Dependencies
 bash
 Copy
 Edit
 pip install -r requirements.txt
-Run the application:
-
+▶️ Run the Application
 bash
 Copy
 Edit
 python app.py
-Access the website:
+Open your browser and go to:
 
-Open your browser and navigate to http://localhost:5000.
+arduino
+Copy
+Edit
+http://localhost:5000
+📄 License
+This project is proprietary software created by and for Redeemed Gospel Church.
+
+kotlin
+Copy
+Edit
+Copyright (c) 2025 Redeemed Gospel Church
+
+All rights reserved.
+
+This software and its source code are the property of Redeemed Gospel Church and are intended solely for internal use or for viewing by authorized users. Unauthorized copying, distribution, modification, or use of this software, in whole or in part, is strictly prohibited.
+
+No part of this website or its backend system may be reused or repurposed without express written consent.
+
+For inquiries, contact: arthur@hadithi1studi0s.com
+🙏 Thank you for visiting Redeemed Gospel Church online!
