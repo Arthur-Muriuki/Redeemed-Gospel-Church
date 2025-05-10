@@ -86,7 +86,7 @@ kotlin
 Copy
 Edit
 ```
-Copyright (c) 2025 Redeemed Gospel Church
+Copyright (c) 2025 arthur muriuki
 
 All rights reserved.
 
