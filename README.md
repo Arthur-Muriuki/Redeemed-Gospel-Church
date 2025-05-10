@@ -12,7 +12,6 @@ This project serves as the church’s online presence and provides visitors with
 ## 🔗 Live Website
 
 👉 **[Visit the Live Site](https://redeemed-gospel-church-subukia-sbu6.onrender.com/)**
-### 📱 Scan to Visit
 
 ---
 
