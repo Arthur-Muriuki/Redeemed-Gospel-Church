@@ -94,5 +94,5 @@ This software and its source code are the property of Redeemed Gospel Church and
 
 No part of this website or its backend system may be reused or repurposed without express written consent.
 
-For inquiries, contact: arthur@hadithi1studi0s.com
+For inquiries, contact: arthurmuriuki06@gmail.com
 🙏 Thank you for visiting Redeemed Gospel Church online!
