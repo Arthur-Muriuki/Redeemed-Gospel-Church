@@ -13,8 +13,7 @@ This project serves as the church’s online presence and provides visitors with
 
 👉 **[Visit the Live Site](https://redeemed-gospel-church-subukia-sbu6.onrender.com/)**
 ### 📱 Scan to Visit
-You can also scan the QR code below to open the website on your phone:
-(<a href="https://ibb.co/7NNGLsLp"><img src="https://i.ibb.co/Wppcjmjz/VISIT-OUR-CHURCH-WEBSITE-1-Protected-View-Word-5-10-2025-2-16-18-PM.png" alt="VISIT-OUR-CHURCH-WEBSITE-1-Protected-View-Word-5-10-2025-2-16-18-PM" border="0"></a>)  
+
 ---
 
 ## 📁 Project Structure
