@@ -84,6 +84,7 @@ This project is proprietary software created by and for Redeemed Gospel Church.
 kotlin
 Copy
 Edit
+```
 Copyright (c) 2025 Redeemed Gospel Church
 
 All rights reserved.
